@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Anne E. De Guzman · freelance resume</title>
-    <!-- Font Awesome 6 (Free) - reliable icons, loaded async with fallback -->
+    <!-- Font Awesome 6 (Free) - async -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="all" onload="this.media='all'">
-    <!-- Google Fonts - optimized -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" media="all">
     <style>
-        /* reset & critical path - minimal FOIT/FOUT */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +18,7 @@
         }
 
         body {
-            background: #ffe9f4; /* base solid color, gradient loads later */
+            background: #ffe9f4;
             font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #4a3f4b;
             line-height: 1.5;
@@ -29,10 +28,8 @@
             justify-content: center;
             align-items: center;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* main card – simplified for performance, reduced animations on mobile */
         .resume-card {
             max-width: 1200px;
             width: 100%;
@@ -43,11 +40,9 @@
             box-shadow: 0 20px 40px rgba(247, 120, 160, 0.15);
             padding: 1.5rem 1.2rem;
             border: 2px solid rgba(255,255,255,0.8);
-            animation: none; /* removed float animation for performance */
             transition: box-shadow 0.3s;
         }
 
-        /* minimal motion if user prefers */
         @media (prefers-reduced-motion: no-preference) {
             .resume-card {
                 animation: gentleFloat 5s infinite ease-in-out;
@@ -59,7 +54,7 @@
             50% { transform: translateY(-5px); }
         }
 
-        /* grid - mobile first then desktop */
+        /* mobile first: column */
         .grid-container {
             display: flex;
             flex-direction: column;
@@ -80,7 +75,7 @@
 
         .profile-photo {
             text-align: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .profile-photo img {
@@ -92,17 +87,39 @@
             box-shadow: 0 10px 20px rgba(240, 128, 160, 0.25);
             transition: transform 0.3s ease;
             background: #ffe2ec;
-            will-change: transform;
         }
 
-        .profile-photo img:hover {
-            transform: scale(1.02);
+        /* ----- mobile name/title (below photo, hidden on desktop) ----- */
+        .mobile-name-title {
+            text-align: center;
+            margin: 0.5rem 0 0.8rem 0;
         }
 
-        .photo-placeholder-text {
-            font-size: 0.75rem;
-            margin-top: 0.25rem;
-            color: #b3889a;
+        .mobile-name-title h2 {
+            font-size: 1.8rem;
+            font-weight: 650;
+            font-family: 'Poppins', 'Quicksand', sans-serif;
+            color: #954f6e;
+            line-height: 1.2;
+            text-shadow: 1px 1px 0 #ffe2f0;
+            word-break: break-word;
+        }
+
+        .mobile-name-title .mobile-tagline {
+            font-size: 0.95rem;
+            background: #fdcde1;
+            display: inline-block;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #623f50;
+            margin-top: 0.2rem;
+            border: 2px solid white;
+        }
+
+        /* desktop name-title (hidden on mobile) */
+        .desktop-name-title {
+            display: none;
         }
 
         .section-title {
@@ -170,7 +187,6 @@
             font-size: 0.7rem;
         }
 
-        /* RIGHT PANEL */
         .right-panel {
             background: rgba(255, 250, 252, 0.7);
             backdrop-filter: blur(4px);
@@ -180,28 +196,6 @@
             box-shadow: 0 6px 14px rgba(255, 200, 220, 0.2);
             border: 1px solid white;
             width: 100%;
-        }
-
-        .name-title h1 {
-            font-size: 2.2rem;
-            font-weight: 650;
-            font-family: 'Poppins', 'Quicksand', sans-serif;
-            color: #954f6e;
-            line-height: 1.2;
-            text-shadow: 1px 1px 0 #ffe2f0;
-            word-break: break-word;
-        }
-
-        .name-title .tagline {
-            font-size: 0.95rem;
-            background: #fdcde1;
-            display: inline-block;
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
-            font-weight: 500;
-            color: #623f50;
-            margin-top: 0.2rem;
-            border: 2px solid white;
         }
 
         .exp-item {
@@ -306,7 +300,6 @@
             font-size: 1rem;
         }
 
-        /* contact form */
         .contact-form {
             background: #fff2f9;
             border-radius: 28px;
@@ -360,7 +353,7 @@
             color: #b68b9d;
         }
 
-        /* desktop styles */
+        /* ===== DESKTOP RULES (min-width: 750px) ===== */
         @media (min-width: 750px) {
             body {
                 padding: 2rem 1.5rem;
@@ -377,25 +370,51 @@
             .left-panel, .right-panel {
                 padding: 1.8rem 1.5rem;
             }
-            .name-title h1 {
-                font-size: 2.8rem;
-            }
-            .submit-btn {
-                width: auto;
-            }
             .profile-photo img {
                 width: 150px;
                 height: 150px;
+            }
+
+            /* HIDE mobile name/title on desktop */
+            .mobile-name-title {
+                display: none;
+            }
+
+            /* SHOW desktop name-title */
+            .desktop-name-title {
+                display: block;
+                margin-bottom: 1.5rem;
+            }
+            .desktop-name-title h1 {
+                font-size: 2.8rem;
+                font-weight: 650;
+                font-family: 'Poppins', 'Quicksand', sans-serif;
+                color: #954f6e;
+                line-height: 1.2;
+                text-shadow: 2px 2px 0 #ffe2f0;
+                word-break: break-word;
+            }
+            .desktop-name-title .tagline {
+                font-size: 1.1rem;
+                background: #fdcde1;
+                display: inline-block;
+                padding: 0.2rem 1.4rem;
+                border-radius: 40px;
+                font-weight: 500;
+                color: #623f50;
+                margin-top: 0.2rem;
+                border: 2px solid white;
+            }
+
+            .submit-btn {
+                width: auto;
             }
         }
 
         /* very small phones */
         @media (max-width: 380px) {
-            .name-title h1 {
-                font-size: 1.9rem;
-            }
-            .exp-header h3 {
-                font-size: 1rem;
+            .mobile-name-title h2 {
+                font-size: 1.5rem;
             }
             .skill-tag {
                 white-space: normal;
@@ -403,7 +422,7 @@
             }
         }
 
-        /* optimize backdrop-filter for devices that support it */
+        /* backdrop-filter fallback */
         @supports not (backdrop-filter: blur(8px)) {
             .left-panel, .right-panel, .resume-card {
                 background: #fff5fa;
@@ -419,7 +438,12 @@
             <div class="left-panel">
                 <div class="profile-photo">
                     <img src="profile.jpg" alt="Anne profile" width="150" height="150" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%3E%3Ccircle%20cx%3D%2275%22%20cy%3D%2275%22%20r%3D%2270%22%20fill%3D%22%23ffe2ec%22%2F%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Cpath%20d%3D%22M50%2095%20Q75%20115%20100%2095%22%20stroke%3D%22%23955f7a%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E');">
-                    <div class="photo-placeholder-text"><i class="fas fa-image"></i> profile.jpg</div>
+                </div>
+
+                <!-- mobile name & title (visible only on mobile) -->
+                <div class="mobile-name-title">
+                    <h2>Anne E. De Guzman</h2>
+                    <span class="mobile-tagline"><i class="fas fa-laptop"></i> Freelance VA · ABM</span>
                 </div>
 
                 <div class="contact-info">
@@ -456,7 +480,8 @@
 
             <!-- RIGHT COLUMN -->
             <div class="right-panel">
-                <div class="name-title">
+                <!-- desktop name & title (hidden on mobile, visible on desktop) -->
+                <div class="desktop-name-title">
                     <h1>Anne E. De Guzman</h1>
                     <span class="tagline"><i class="fas fa-laptop"></i> Freelance VA · ABM</span>
                 </div>
