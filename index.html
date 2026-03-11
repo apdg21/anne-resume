@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anne E. De Guzman · girly modern resume</title>
-    <!-- Font Awesome 6 (free) for cute icons & animations -->
+    <title>Anne E. De Guzman · freelance & girly resume</title>
+    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Poppins + Quicksand for girly softness -->
+    <!-- Google Fonts: Quicksand + Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -27,14 +27,14 @@
             align-items: center;
         }
 
-        /* main card – soft, rounded, with floating animation */
+        /* main card – soft floating */
         .resume-card {
             max-width: 1200px;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-radius: 48px 48px 48px 48px;
+            border-radius: 48px;
             box-shadow: 0 30px 50px rgba(247, 120, 160, 0.15),
                         0 10px 25px rgba(255, 200, 220, 0.5),
                         inset 0 2px 4px rgba(255,255,255,0.8);
@@ -49,7 +49,6 @@
             100% { transform: translateY(0px); }
         }
 
-        /* two column layout */
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 2.2fr;
@@ -57,7 +56,7 @@
             margin-top: 0.5rem;
         }
 
-        /* --- LEFT PANEL (soft pastel, girly touches) --- */
+        /* LEFT PANEL */
         .left-panel {
             background: rgba(255, 245, 250, 0.7);
             backdrop-filter: blur(4px);
@@ -70,7 +69,6 @@
         .profile-photo {
             text-align: center;
             margin-bottom: 1.5rem;
-            position: relative;
         }
 
         .profile-photo img {
@@ -81,7 +79,7 @@
             border: 5px solid white;
             box-shadow: 0 12px 25px rgba(240, 128, 160, 0.3);
             transition: transform 0.4s ease;
-            background: #ffe2ec; /* fallback while image loads */
+            background: #ffe2ec;
         }
 
         .profile-photo img:hover {
@@ -92,7 +90,6 @@
             font-size: 0.8rem;
             margin-top: 0.3rem;
             color: #b3889a;
-            letter-spacing: 0.5px;
         }
 
         .section-title {
@@ -140,7 +137,6 @@
             border-bottom: none;
         }
 
-        /* skill chips */
         .skill-tag {
             display: inline-block;
             background: white;
@@ -161,7 +157,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- RIGHT PANEL (experience & details) --- */
+        /* RIGHT PANEL */
         .right-panel {
             background: rgba(255, 250, 252, 0.6);
             backdrop-filter: blur(4px);
@@ -171,17 +167,12 @@
             border: 1px solid white;
         }
 
-        .name-title {
-            margin-bottom: 1rem;
-        }
-
         .name-title h1 {
             font-size: 2.8rem;
             font-weight: 650;
             font-family: 'Poppins', sans-serif;
             color: #954f6e;
             line-height: 1.2;
-            letter-spacing: -0.5px;
             text-shadow: 2px 2px 0 #ffe2f0;
         }
 
@@ -249,7 +240,19 @@
             width: 22px;
         }
 
-        /* achievements tiny chips */
+        .freelance-badge {
+            background: #fee1f0;
+            border-radius: 60px;
+            padding: 0.2rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            border: 1px solid white;
+            color: #a14771;
+            margin-left: 0.5rem;
+        }
+
         .achievement-badge {
             background: #fad7e6;
             border-radius: 40px;
@@ -261,7 +264,6 @@
             border: 1px solid white;
         }
 
-        /* hobbies / talent */
         .hobby-grid {
             display: flex;
             flex-wrap: wrap;
@@ -340,7 +342,6 @@
         .submit-btn:hover {
             background: #f27db0;
             transform: scale(1.02);
-            box-shadow: 0 10px 18px #f7a6c7;
         }
 
         footer {
@@ -355,18 +356,6 @@
             margin: 1rem 0;
         }
 
-        /* little animations */
-        .pulse-icon {
-            animation: pulse 2.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* mobile friendly */
         @media (max-width: 750px) {
             .grid-container {
                 grid-template-columns: 1fr;
@@ -380,17 +369,14 @@
 </head>
 <body>
     <div class="resume-card">
-        <!-- two column layout -->
         <div class="grid-container">
-            <!-- LEFT COLUMN: personal, profile, skills -->
+            <!-- LEFT COLUMN: personal, photo, skills -->
             <div class="left-panel">
-                <!-- profile photo placeholder -->
                 <div class="profile-photo">
                     <img src="profile.jpg" alt="Anne profile" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%3E%3Ccircle%20cx%3D%2275%22%20cy%3D%2275%22%20r%3D%2270%22%20fill%3D%22%23ffe2ec%22%2F%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Cpath%20d%3D%22M50%2095%20Q75%20115%20100%2095%22%20stroke%3D%22%23955f7a%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E');">
-                    <div class="photo-placeholder-text"><i class="fa-regular fa-heart pulse-icon"></i> upload profile.jpg</div>
+                    <div class="photo-placeholder-text"><i class="fa-regular fa-heart"></i> profile.jpg (placeholder)</div>
                 </div>
 
-                <!-- contact from left side also (personal) -->
                 <div class="contact-info">
                     <div class="personal-item"><i class="fa-regular fa-calendar"></i> 24 Sept 2004</div>
                     <div class="personal-item"><i class="fa-regular fa-female"></i> Female / Single</div>
@@ -399,19 +385,19 @@
                 </div>
 
                 <div class="section-title"><i class="fa-regular fa-address-card"></i> Contact</div>
-                <div class="personal-item"><i class="fa-regular fa-location-dot"></i> Avocado St. Phase 1 West Camella SPV. Molino 3, Bacoor Cavite</div>
+                <div class="personal-item"><i class="fa-regular fa-location-dot"></i> Avocado St. Phase 1 West, Bacoor Cavite</div>
                 <div class="personal-item"><i class="fa-regular fa-phone"></i> 09051300708</div>
                 <div class="personal-item"><i class="fa-regular fa-envelope"></i> annedeguzman.dsi@gmail.com</div>
 
                 <div class="section-title"><i class="fa-regular fa-star"></i> Skills</div>
                 <div>
-                    <span class="skill-tag"><i class="fa-regular fa-envelope-open-text"></i> Email support</span>
-                    <span class="skill-tag"><i class="fa-regular fa-tag"></i> Product listing</span>
-                    <span class="skill-tag"><i class="fa-regular fa-pen-to-square"></i> Inventory management</span>
-                    <span class="skill-tag"><i class="fa-regular fa-comments"></i> Customer service</span>
-                    <span class="skill-tag"><i class="fa-regular fa-box"></i> Order processing</span>
+                    <span class="skill-tag"><i class="fa-regular fa-envelope"></i> Freelance email support</span>
+                    <span class="skill-tag"><i class="fa-regular fa-tag"></i> Product listing (e‑commerce)</span>
+                    <span class="skill-tag"><i class="fa-regular fa-box"></i> Inventory management</span>
                     <span class="skill-tag"><i class="fa-regular fa-chart-line"></i> Data entry</span>
-                    <span class="skill-tag"><i class="fa-regular fa-paintbrush"></i> Canva design</span>
+                    <span class="skill-tag"><i class="fa-regular fa-pen-to-square"></i> Copywriting / SEO</span>
+                    <span class="skill-tag"><i class="fa-regular fa-paintbrush"></i> Canva & photos</span>
+                    <span class="skill-tag"><i class="fa-regular fa-clock"></i> Time management</span>
                 </div>
 
                 <div class="section-title"><i class="fa-regular fa-face-smile"></i> Talents & Hobbies</div>
@@ -419,91 +405,91 @@
                     <span class="hobby-item"><i class="fa-regular fa-headphones"></i> Music</span>
                     <span class="hobby-item"><i class="fa-regular fa-book-open"></i> Fantasy stories</span>
                     <span class="hobby-item"><i class="fa-regular fa-chess-queen"></i> Chess</span>
-                    <span class="hobby-item"><i class="fa-regular fa-pencil"></i> Creative writing</span>
+                    <span class="hobby-item"><i class="fa-regular fa-feather"></i> Creative writing</span>
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: education, experiences, achievements, form -->
+            <!-- RIGHT COLUMN: name, freelance experience, etc -->
             <div class="right-panel">
                 <div class="name-title">
                     <h1>Anne E. De Guzman</h1>
-                    <span class="tagline"><i class="fa-regular fa-sparkles"></i> ABM · creative & flexible</span>
+                    <span class="tagline"><i class="fa-regular fa-laptop"></i> Freelance virtual assistant · ABM</span>
                 </div>
 
-                <!-- EDUCATION -->
+                <!-- EDUCATION (kept as before) -->
                 <div class="section-title"><i class="fa-regular fa-graduation-cap"></i> Education</div>
                 <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fa-regular fa-building-columns" style="color:#b26b8c; width:22px;"></i> <strong>Don Stevens Institute of Cavite, Inc.</strong> (ABM)</div>
-                    <div style="margin-left: 28px;">Aug 2022 – Apr 2024 · Phase 1 Central, Bacoor</div>
-                    <div style="margin-left: 28px;"><i class="fa-regular fa-star"></i> with honors, accountancy & business simulation</div>
+                    <div><i class="fa-regular fa-building-columns" style="color:#b26b8c;"></i> <strong>Don Stevens Institute of Cavite, Inc.</strong> (ABM)</div>
+                    <div style="margin-left: 28px;">Aug 2022 – Apr 2024 · with honors</div>
                 </div>
                 <div class="exp-item" style="padding: 1rem 1.3rem;">
                     <div><i class="fa-regular fa-school"></i> <strong>Saint Francis Institute</strong> (Junior High)</div>
-                    <div style="margin-left: 28px;">June 2018 – Mar 2020 · Phase 1 West, Bacoor</div>
+                    <div style="margin-left: 28px;">June 2018 – Mar 2020</div>
                 </div>
                 <div class="exp-item" style="padding: 1rem 1.3rem;">
                     <div><i class="fa-regular fa-leaf"></i> <strong>Saint Francis Institute</strong> (Elementary)</div>
                     <div style="margin-left: 28px;">June 2013 – Mar 2017</div>
                 </div>
 
-                <!-- EXPERIENCES & ACHIEVEMENTS (with added details) -->
-                <div class="section-title"><i class="fa-regular fa-briefcase"></i> Experiences & achievements</div>
+                <!-- FREELANCE EXPERIENCES (updated with freelance context) -->
+                <div class="section-title"><i class="fa-regular fa-briefcase"></i> Freelance experience</div>
                 
                 <div class="exp-item">
                     <div class="exp-header">
                         <i class="fa-regular fa-message"></i>
-                        <h3>Email customer service</h3>
+                        <h3>Freelance email customer support <span class="freelance-badge"><i class="fa-regular fa-hand-peace"></i> self-employed</span></h3>
                     </div>
                     <div class="exp-detail">
-                        <p><i class="fa-regular fa-circle-check"></i> Responded to 40+ customer inquiries daily via email (returns, product questions).</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Maintained 98% satisfaction rating using empathetic, clear communication.</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Handled order adjustments and refunds, coordinated with logistics.</p>
+                        <p><i class="fa-regular fa-circle-check"></i> Provided remote email support for 3 small US‑based online shops (response time &lt; 4h).</p>
+                        <p><i class="fa-regular fa-circle-check"></i> Handled order inquiries, returns, and product questions; maintained 5‑star feedback.</p>
+                        <p><i class="fa-regular fa-circle-check"></i> Managed shared inboxes using Gmail & Zoho, created template responses for efficiency.</p>
                     </div>
-                    <span class="achievement-badge"><i class="fa-regular fa-trophy"></i> top support agent (Aug 2023)</span>
+                    <span class="achievement-badge"><i class="fa-regular fa-clock"></i> 1.5 years freelance</span>
+                    <span class="achievement-badge"><i class="fa-regular fa-message"></i> 1.2k+ emails processed</span>
                 </div>
 
                 <div class="exp-item">
                     <div class="exp-header">
                         <i class="fa-regular fa-tags"></i>
-                        <h3>Product lister / E-commerce assistant</h3>
+                        <h3>Freelance product lister / e‑commerce VA</h3>
                     </div>
                     <div class="exp-detail">
-                        <p><i class="fa-regular fa-circle-check"></i> Created and optimized 300+ product listings on Shopify & Lazada with SEO-friendly descriptions.</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Managed inventory updates, price changes, and high-quality image uploads.</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Collaborated with the marketing team to launch weekly promotions.</p>
+                        <p><i class="fa-regular fa-circle-check"></i> Listed and optimized 500+ products on Shopify, eBay, and Carousell for various clients.</p>
+                        <p><i class="fa-regular fa-circle-check"></i> Wrote SEO-friendly titles & descriptions, resized images, and managed inventory counts.</p>
+                        <p><i class="fa-regular fa-circle-check"></i> Coordinated with a UK‑based fashion brand to update their entire winter collection.</p>
                     </div>
-                    <span class="achievement-badge"><i class="fa-regular fa-star"></i> boosted category sales by 20%</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-pen"></i> accurate lister award</span>
+                    <span class="achievement-badge"><i class="fa-regular fa-pen"></i> SEO keywords</span>
+                    <span class="achievement-badge"><i class="fa-regular fa-chart-simple"></i> 20% faster uploads</span>
                 </div>
 
-                <!-- extra achievements (from list) -->
-                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0;">
-                    <span class="achievement-badge"><i class="fa-regular fa-envelope"></i> email customer service</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-rectangle-ad"></i> product lister</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-face-smile"></i> flexible</span>
+                <!-- Additional freelance achievements -->
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 5px 0 10px;">
+                    <span class="achievement-badge"><i class="fa-regular fa-star"></i> flexible freelancer</span>
                     <span class="achievement-badge"><i class="fa-regular fa-lightbulb"></i> resourceful</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-paintbrush"></i> creative</span>
+                    <span class="achievement-badge"><i class="fa-regular fa-wand-magic"></i> creative content</span>
+                    <span class="achievement-badge"><i class="fa-regular fa-handshake"></i> client satisfaction</span>
                 </div>
 
                 <!-- COMPETENCE (extra) -->
                 <div class="section-title"><i class="fa-regular fa-puzzle-piece"></i> Core competences</div>
                 <div style="margin-bottom: 1rem;">
-                    <span class="skill-tag">Flexible schedule</span>
-                    <span class="skill-tag">Resourceful problem solving</span>
-                    <span class="skill-tag">Creative content</span>
-                    <span class="skill-tag">Team collaboration</span>
+                    <span class="skill-tag">Flexible hours</span>
+                    <span class="skill-tag">Resourceful research</span>
+                    <span class="skill-tag">Creative writing</span>
                     <span class="skill-tag">MS Office / G Suite</span>
+                    <span class="skill-tag">Canva / basic editing</span>
+                    <span class="skill-tag">Time management</span>
                 </div>
 
-                <!-- CONTACT FORM (using formsubmit) -->
+                <!-- CONTACT FORM (formsubmit) -->
                 <div class="contact-form">
                     <div style="font-weight: 600; font-size: 1.3rem; color: #a0567a; margin-bottom: 0.8rem;">
-                        <i class="fa-regular fa-paper-plane"></i> send me a message
+                        <i class="fa-regular fa-paper-plane"></i> let's work together
                     </div>
                     <form action="https://formsubmit.co/annedeguzman.dsi@gmail.com" method="POST">
-                        <!-- formsubmit honeypot & options -->
+                        <!-- formsubmit options -->
                         <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
-                        <input type="hidden" name="_subject" value="New message from resume page!">
+                        <input type="hidden" name="_subject" value="New freelance message for Anne!">
                         <input type="hidden" name="_captcha" value="false">
                         
                         <div class="form-group">
@@ -513,15 +499,15 @@
                             <input type="email" name="email" placeholder="email address *" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" rows="3" placeholder="hi anne! 💬 ..." required></textarea>
+                            <textarea name="message" rows="3" placeholder="Hi Anne, I'd like to chat about... 💬" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn"><i class="fa-regular fa-heart"></i> send message <i class="fa-regular fa-paper-plane-top"></i></button>
+                        <button type="submit" class="submit-btn"><i class="fa-regular fa-heart"></i> send message <i class="fa-regular fa-paper-plane"></i></button>
                     </form>
-                    <p style="font-size:0.7rem; margin-top:0.5rem;"><i class="fa-regular fa-lock"></i> your info is safe (formsubmit)</p>
+                    <p style="font-size:0.7rem; margin-top:0.5rem;"><i class="fa-regular fa-shield"></i> via formsubmit.co</p>
                 </div>
 
                 <footer>
-                    <i class="fa-regular fa-crown"></i> anne e. de guzman · let's connect! <i class="fa-regular fa-sparkles"></i>
+                    <i class="fa-regular fa-crown"></i> anne e. de guzman · freelance ready <i class="fa-regular fa-sparkles"></i>
                 </footer>
             </div>
         </div> <!-- end grid -->
