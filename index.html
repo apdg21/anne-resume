@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anne E. De Guzman · freelance & girly resume</title>
-    <!-- Font Awesome 6 (free) -->
+    <title>Anne E. De Guzman · freelance resume (reliable icons)</title>
+    <!-- Font Awesome 6 (Free) - using only rock-solid free icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Quicksand + Poppins -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -27,7 +27,6 @@
             align-items: center;
         }
 
-        /* main card – soft floating */
         .resume-card {
             max-width: 1200px;
             width: 100%;
@@ -151,6 +150,11 @@
             transition: all 0.2s;
         }
 
+        .skill-tag i {
+            margin-right: 4px;
+            color: #e07ca3;
+        }
+
         .skill-tag:hover {
             background: #fdcde1;
             color: #6b4a5a;
@@ -233,11 +237,15 @@
 
         .exp-detail p {
             margin: 0.2rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
         }
 
         .exp-detail i {
             color: #de7ca2;
-            width: 22px;
+            width: 20px;
+            font-size: 1rem;
         }
 
         .freelance-badge {
@@ -262,6 +270,11 @@
             display: inline-block;
             margin: 0.2rem 0.1rem;
             border: 1px solid white;
+        }
+
+        .achievement-badge i {
+            margin-right: 4px;
+            color: #b35f86;
         }
 
         .hobby-grid {
@@ -339,6 +352,10 @@
             box-shadow: 0 5px 10px #fac0d8;
         }
 
+        .submit-btn i {
+            font-size: 1rem;
+        }
+
         .submit-btn:hover {
             background: #f27db0;
             transform: scale(1.02);
@@ -370,121 +387,121 @@
 <body>
     <div class="resume-card">
         <div class="grid-container">
-            <!-- LEFT COLUMN: personal, photo, skills -->
+            <!-- LEFT COLUMN - personal -->
             <div class="left-panel">
                 <div class="profile-photo">
                     <img src="profile.jpg" alt="Anne profile" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%3E%3Ccircle%20cx%3D%2275%22%20cy%3D%2275%22%20r%3D%2270%22%20fill%3D%22%23ffe2ec%22%2F%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Cpath%20d%3D%22M50%2095%20Q75%20115%20100%2095%22%20stroke%3D%22%23955f7a%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E');">
-                    <div class="photo-placeholder-text"><i class="fa-regular fa-heart"></i> profile.jpg (placeholder)</div>
+                    <div class="photo-placeholder-text"><i class="fas fa-image"></i> profile.jpg (upload in root)</div>
                 </div>
 
                 <div class="contact-info">
-                    <div class="personal-item"><i class="fa-regular fa-calendar"></i> 24 Sept 2004</div>
-                    <div class="personal-item"><i class="fa-regular fa-female"></i> Female / Single</div>
-                    <div class="personal-item"><i class="fa-regular fa-ruler"></i> 142 cm / 34 kg</div>
-                    <div class="personal-item"><i class="fa-regular fa-flag"></i> Filipino · Catholic</div>
+                    <div class="personal-item"><i class="fas fa-calendar-alt"></i> 24 Sept 2004</div>
+                    <div class="personal-item"><i class="fas fa-venus-mars"></i> Female / Single</div>
+                    <div class="personal-item"><i class="fas fa-ruler"></i> 142 cm / 34 kg</div>
+                    <div class="personal-item"><i class="fas fa-flag"></i> Filipino · Catholic</div>
                 </div>
 
-                <div class="section-title"><i class="fa-regular fa-address-card"></i> Contact</div>
-                <div class="personal-item"><i class="fa-regular fa-location-dot"></i> Avocado St. Phase 1 West, Bacoor Cavite</div>
-                <div class="personal-item"><i class="fa-regular fa-phone"></i> 09051300708</div>
-                <div class="personal-item"><i class="fa-regular fa-envelope"></i> annedeguzman.dsi@gmail.com</div>
+                <div class="section-title"><i class="fas fa-id-card"></i> Contact</div>
+                <div class="personal-item"><i class="fas fa-map-marker-alt"></i> Avocado St. Phase 1 West, Bacoor Cavite</div>
+                <div class="personal-item"><i class="fas fa-phone-alt"></i> 09051300708</div>
+                <div class="personal-item"><i class="fas fa-envelope"></i> annedeguzman.dsi@gmail.com</div>
 
-                <div class="section-title"><i class="fa-regular fa-star"></i> Skills</div>
+                <div class="section-title"><i class="fas fa-star"></i> Skills</div>
                 <div>
-                    <span class="skill-tag"><i class="fa-regular fa-envelope"></i> Freelance email support</span>
-                    <span class="skill-tag"><i class="fa-regular fa-tag"></i> Product listing (e‑commerce)</span>
-                    <span class="skill-tag"><i class="fa-regular fa-box"></i> Inventory management</span>
-                    <span class="skill-tag"><i class="fa-regular fa-chart-line"></i> Data entry</span>
-                    <span class="skill-tag"><i class="fa-regular fa-pen-to-square"></i> Copywriting / SEO</span>
-                    <span class="skill-tag"><i class="fa-regular fa-paintbrush"></i> Canva & photos</span>
-                    <span class="skill-tag"><i class="fa-regular fa-clock"></i> Time management</span>
+                    <span class="skill-tag"><i class="fas fa-envelope"></i> Freelance email support</span>
+                    <span class="skill-tag"><i class="fas fa-tag"></i> Product listing</span>
+                    <span class="skill-tag"><i class="fas fa-box"></i> Inventory management</span>
+                    <span class="skill-tag"><i class="fas fa-chart-line"></i> Data entry</span>
+                    <span class="skill-tag"><i class="fas fa-pen"></i> Copywriting / SEO</span>
+                    <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva design</span>
+                    <span class="skill-tag"><i class="fas fa-clock"></i> Time management</span>
                 </div>
 
-                <div class="section-title"><i class="fa-regular fa-face-smile"></i> Talents & Hobbies</div>
+                <div class="section-title"><i class="fas fa-smile"></i> Talents & Hobbies</div>
                 <div class="hobby-grid">
-                    <span class="hobby-item"><i class="fa-regular fa-headphones"></i> Music</span>
-                    <span class="hobby-item"><i class="fa-regular fa-book-open"></i> Fantasy stories</span>
-                    <span class="hobby-item"><i class="fa-regular fa-chess-queen"></i> Chess</span>
-                    <span class="hobby-item"><i class="fa-regular fa-feather"></i> Creative writing</span>
+                    <span class="hobby-item"><i class="fas fa-headphones"></i> Music</span>
+                    <span class="hobby-item"><i class="fas fa-book-open"></i> Fantasy stories</span>
+                    <span class="hobby-item"><i class="fas fa-chess-queen"></i> Chess</span>
+                    <span class="hobby-item"><i class="fas fa-feather-alt"></i> Creative writing</span>
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: name, freelance experience, etc -->
+            <!-- RIGHT COLUMN - freelance, education, form -->
             <div class="right-panel">
                 <div class="name-title">
                     <h1>Anne E. De Guzman</h1>
-                    <span class="tagline"><i class="fa-regular fa-laptop"></i> Freelance virtual assistant · ABM</span>
+                    <span class="tagline"><i class="fas fa-laptop"></i> Freelance virtual assistant · ABM</span>
                 </div>
 
-                <!-- EDUCATION (kept as before) -->
-                <div class="section-title"><i class="fa-regular fa-graduation-cap"></i> Education</div>
+                <!-- EDUCATION -->
+                <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
                 <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fa-regular fa-building-columns" style="color:#b26b8c;"></i> <strong>Don Stevens Institute of Cavite, Inc.</strong> (ABM)</div>
+                    <div><i class="fas fa-university" style="color:#b26b8c;"></i> <strong>Don Stevens Institute of Cavite, Inc.</strong> (ABM)</div>
                     <div style="margin-left: 28px;">Aug 2022 – Apr 2024 · with honors</div>
                 </div>
                 <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fa-regular fa-school"></i> <strong>Saint Francis Institute</strong> (Junior High)</div>
+                    <div><i class="fas fa-school"></i> <strong>Saint Francis Institute</strong> (Junior High)</div>
                     <div style="margin-left: 28px;">June 2018 – Mar 2020</div>
                 </div>
                 <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fa-regular fa-leaf"></i> <strong>Saint Francis Institute</strong> (Elementary)</div>
+                    <div><i class="fas fa-leaf"></i> <strong>Saint Francis Institute</strong> (Elementary)</div>
                     <div style="margin-left: 28px;">June 2013 – Mar 2017</div>
                 </div>
 
-                <!-- FREELANCE EXPERIENCES (updated with freelance context) -->
-                <div class="section-title"><i class="fa-regular fa-briefcase"></i> Freelance experience</div>
+                <!-- FREELANCE EXPERIENCES -->
+                <div class="section-title"><i class="fas fa-briefcase"></i> Freelance experience</div>
                 
                 <div class="exp-item">
                     <div class="exp-header">
-                        <i class="fa-regular fa-message"></i>
-                        <h3>Freelance email customer support <span class="freelance-badge"><i class="fa-regular fa-hand-peace"></i> self-employed</span></h3>
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Freelance email customer support <span class="freelance-badge"><i class="fas fa-hand-peace"></i> self-employed</span></h3>
                     </div>
                     <div class="exp-detail">
-                        <p><i class="fa-regular fa-circle-check"></i> Provided remote email support for 3 small US‑based online shops (response time &lt; 4h).</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Handled order inquiries, returns, and product questions; maintained 5‑star feedback.</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Managed shared inboxes using Gmail & Zoho, created template responses for efficiency.</p>
+                        <p><i class="fas fa-check-circle"></i> Provided remote email support for 3 small US‑based online shops (response time < 4h).</p>
+                        <p><i class="fas fa-check-circle"></i> Handled order inquiries, returns, and product questions; maintained 5‑star feedback.</p>
+                        <p><i class="fas fa-check-circle"></i> Managed shared inboxes using Gmail & Zoho, created template responses for efficiency.</p>
                     </div>
-                    <span class="achievement-badge"><i class="fa-regular fa-clock"></i> 1.5 years freelance</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-message"></i> 1.2k+ emails processed</span>
+                    <span class="achievement-badge"><i class="fas fa-clock"></i> 1.5 years freelance</span>
+                    <span class="achievement-badge"><i class="fas fa-comment"></i> 1.2k+ emails processed</span>
                 </div>
 
                 <div class="exp-item">
                     <div class="exp-header">
-                        <i class="fa-regular fa-tags"></i>
+                        <i class="fas fa-tags"></i>
                         <h3>Freelance product lister / e‑commerce VA</h3>
                     </div>
                     <div class="exp-detail">
-                        <p><i class="fa-regular fa-circle-check"></i> Listed and optimized 500+ products on Shopify, eBay, and Carousell for various clients.</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Wrote SEO-friendly titles & descriptions, resized images, and managed inventory counts.</p>
-                        <p><i class="fa-regular fa-circle-check"></i> Coordinated with a UK‑based fashion brand to update their entire winter collection.</p>
+                        <p><i class="fas fa-check-circle"></i> Listed and optimized 500+ products on Shopify, eBay, and Carousell for various clients.</p>
+                        <p><i class="fas fa-check-circle"></i> Wrote SEO-friendly titles & descriptions, resized images, and managed inventory counts.</p>
+                        <p><i class="fas fa-check-circle"></i> Coordinated with a UK‑based fashion brand to update their entire winter collection.</p>
                     </div>
-                    <span class="achievement-badge"><i class="fa-regular fa-pen"></i> SEO keywords</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-chart-simple"></i> 20% faster uploads</span>
+                    <span class="achievement-badge"><i class="fas fa-pen"></i> SEO keywords</span>
+                    <span class="achievement-badge"><i class="fas fa-chart-simple"></i> 20% faster uploads</span>
                 </div>
 
-                <!-- Additional freelance achievements -->
+                <!-- Additional freelance badges -->
                 <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 5px 0 10px;">
-                    <span class="achievement-badge"><i class="fa-regular fa-star"></i> flexible freelancer</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-lightbulb"></i> resourceful</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-wand-magic"></i> creative content</span>
-                    <span class="achievement-badge"><i class="fa-regular fa-handshake"></i> client satisfaction</span>
+                    <span class="achievement-badge"><i class="fas fa-star"></i> flexible freelancer</span>
+                    <span class="achievement-badge"><i class="fas fa-lightbulb"></i> resourceful</span>
+                    <span class="achievement-badge"><i class="fas fa-magic"></i> creative</span>
+                    <span class="achievement-badge"><i class="fas fa-handshake"></i> client satisfaction</span>
                 </div>
 
-                <!-- COMPETENCE (extra) -->
-                <div class="section-title"><i class="fa-regular fa-puzzle-piece"></i> Core competences</div>
+                <!-- COMPETENCE -->
+                <div class="section-title"><i class="fas fa-puzzle-piece"></i> Core competences</div>
                 <div style="margin-bottom: 1rem;">
-                    <span class="skill-tag">Flexible hours</span>
-                    <span class="skill-tag">Resourceful research</span>
-                    <span class="skill-tag">Creative writing</span>
-                    <span class="skill-tag">MS Office / G Suite</span>
-                    <span class="skill-tag">Canva / basic editing</span>
-                    <span class="skill-tag">Time management</span>
+                    <span class="skill-tag"><i class="fas fa-calendar-check"></i> Flexible hours</span>
+                    <span class="skill-tag"><i class="fas fa-search"></i> Resourceful research</span>
+                    <span class="skill-tag"><i class="fas fa-pencil-alt"></i> Creative writing</span>
+                    <span class="skill-tag"><i class="fas fa-file-alt"></i> MS Office / G Suite</span>
+                    <span class="skill-tag"><i class="fas fa-image"></i> Canva / basic editing</span>
+                    <span class="skill-tag"><i class="fas fa-hourglass-half"></i> Time management</span>
                 </div>
 
-                <!-- CONTACT FORM (formsubmit) -->
+                <!-- CONTACT FORM (formsubmit) with reliable icons -->
                 <div class="contact-form">
                     <div style="font-weight: 600; font-size: 1.3rem; color: #a0567a; margin-bottom: 0.8rem;">
-                        <i class="fa-regular fa-paper-plane"></i> let's work together
+                        <i class="fas fa-paper-plane"></i> let's work together
                     </div>
                     <form action="https://formsubmit.co/annedeguzman.dsi@gmail.com" method="POST">
                         <!-- formsubmit options -->
@@ -501,13 +518,13 @@
                         <div class="form-group">
                             <textarea name="message" rows="3" placeholder="Hi Anne, I'd like to chat about... 💬" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn"><i class="fa-regular fa-heart"></i> send message <i class="fa-regular fa-paper-plane"></i></button>
+                        <button type="submit" class="submit-btn"><i class="fas fa-heart"></i> send message <i class="fas fa-paper-plane"></i></button>
                     </form>
-                    <p style="font-size:0.7rem; margin-top:0.5rem;"><i class="fa-regular fa-shield"></i> via formsubmit.co</p>
+                    <p style="font-size:0.7rem; margin-top:0.5rem;"><i class="fas fa-shield-alt"></i> via formsubmit.co</p>
                 </div>
 
                 <footer>
-                    <i class="fa-regular fa-crown"></i> anne e. de guzman · freelance ready <i class="fa-regular fa-sparkles"></i>
+                    <i class="fas fa-crown"></i> anne e. de guzman · freelance ready <i class="fas fa-sparkles"></i>
                 </footer>
             </div>
         </div> <!-- end grid -->
