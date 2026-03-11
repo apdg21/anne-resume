@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anne E. De Guzman · freelance resume (reliable icons)</title>
-    <!-- Font Awesome 6 (Free) - using only rock-solid free icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Anne E. De Guzman · freelance resume</title>
+    <!-- Font Awesome 6 (Free) - reliable icons, loaded async with fallback -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="all" onload="this.media='all'">
+    <!-- Google Fonts - optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" media="all">
     <style>
+        /* reset & critical path - minimal FOIT/FOUT */
         * {
             margin: 0;
             padding: 0;
@@ -16,175 +19,184 @@
         }
 
         body {
-            background: linear-gradient(145deg, #ffe9f4 0%, #ffe0f0 100%);
-            font-family: 'Quicksand', sans-serif;
+            background: #ffe9f4; /* base solid color, gradient loads later */
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #4a3f4b;
-            line-height: 1.6;
-            padding: 2rem 1.5rem;
+            line-height: 1.5;
+            padding: 1rem;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* main card – simplified for performance, reduced animations on mobile */
         .resume-card {
             max-width: 1200px;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 48px;
-            box-shadow: 0 30px 50px rgba(247, 120, 160, 0.15),
-                        0 10px 25px rgba(255, 200, 220, 0.5),
-                        inset 0 2px 4px rgba(255,255,255,0.8);
-            padding: 2.2rem 2rem;
-            border: 2px solid rgba(255,255,255,0.7);
-            animation: float 6s infinite ease-in-out;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(247, 120, 160, 0.15);
+            padding: 1.5rem 1.2rem;
+            border: 2px solid rgba(255,255,255,0.8);
+            animation: none; /* removed float animation for performance */
+            transition: box-shadow 0.3s;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        /* minimal motion if user prefers */
+        @media (prefers-reduced-motion: no-preference) {
+            .resume-card {
+                animation: gentleFloat 5s infinite ease-in-out;
+            }
         }
 
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* grid - mobile first then desktop */
         .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 2.2fr;
-            gap: 2rem;
-            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
         }
 
         /* LEFT PANEL */
         .left-panel {
-            background: rgba(255, 245, 250, 0.7);
+            background: rgba(255, 245, 250, 0.8);
             backdrop-filter: blur(4px);
-            border-radius: 38px;
-            padding: 1.8rem 1.5rem;
-            box-shadow: inset 0 1px 5px rgba(255,255,255,0.9), 0 8px 18px rgba(252, 165, 195, 0.2);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 32px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 6px 14px rgba(252, 165, 195, 0.15);
             border: 1px solid white;
+            width: 100%;
         }
 
         .profile-photo {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .profile-photo img {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 12px 25px rgba(240, 128, 160, 0.3);
-            transition: transform 0.4s ease;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(240, 128, 160, 0.25);
+            transition: transform 0.3s ease;
             background: #ffe2ec;
+            will-change: transform;
         }
 
         .profile-photo img:hover {
-            transform: scale(1.03) rotate(1deg);
+            transform: scale(1.02);
         }
 
         .photo-placeholder-text {
-            font-size: 0.8rem;
-            margin-top: 0.3rem;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
             color: #b3889a;
         }
 
         .section-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', 'Quicksand', sans-serif;
             font-weight: 600;
-            font-size: 1.3rem;
-            margin: 1.5rem 0 1rem 0;
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.8rem 0;
             color: #bc7a9b;
-            border-bottom: 3px dotted #fbb8d4;
-            padding-bottom: 0.45rem;
+            border-bottom: 2px dotted #fbb8d4;
+            padding-bottom: 0.3rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .section-title i {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: #f28bb7;
+            width: 1.4rem;
         }
 
         .personal-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 0.5rem 0;
+            gap: 10px;
+            padding: 0.4rem 0;
             border-bottom: 1px dashed #fec7db;
             font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .personal-item i {
-            width: 24px;
+            width: 1.4rem;
             color: #f79ebe;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            text-align: center;
         }
 
         .contact-info {
             background: #ffeef4;
-            padding: 1.2rem 1rem;
-            border-radius: 28px;
-            margin: 1.5rem 0;
+            padding: 1rem 0.8rem;
+            border-radius: 24px;
+            margin: 1rem 0;
             border: 2px solid white;
-        }
-
-        .contact-info .personal-item:last-child {
-            border-bottom: none;
         }
 
         .skill-tag {
             display: inline-block;
             background: white;
-            padding: 0.4rem 1.1rem;
+            padding: 0.35rem 0.9rem;
             border-radius: 40px;
-            margin: 0.3rem 0.25rem;
-            font-size: 0.9rem;
+            margin: 0.2rem 0.15rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: #a55d7a;
-            box-shadow: 0 4px 8px #fad1e0;
+            box-shadow: 0 2px 6px #fad1e0;
             border: 1px solid #ffdbea;
-            transition: all 0.2s;
+            transition: background 0.2s;
+            white-space: nowrap;
         }
 
         .skill-tag i {
             margin-right: 4px;
             color: #e07ca3;
-        }
-
-        .skill-tag:hover {
-            background: #fdcde1;
-            color: #6b4a5a;
-            transform: translateY(-2px);
+            font-size: 0.7rem;
         }
 
         /* RIGHT PANEL */
         .right-panel {
-            background: rgba(255, 250, 252, 0.6);
+            background: rgba(255, 250, 252, 0.7);
             backdrop-filter: blur(4px);
-            border-radius: 38px;
-            padding: 1.8rem 1.8rem;
-            box-shadow: inset 0 1px 5px rgba(255,255,255,0.9), 0 8px 18px rgba(255, 200, 220, 0.3);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 32px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 6px 14px rgba(255, 200, 220, 0.2);
             border: 1px solid white;
+            width: 100%;
         }
 
         .name-title h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 650;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', 'Quicksand', sans-serif;
             color: #954f6e;
             line-height: 1.2;
-            text-shadow: 2px 2px 0 #ffe2f0;
+            text-shadow: 1px 1px 0 #ffe2f0;
+            word-break: break-word;
         }
 
         .name-title .tagline {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             background: #fdcde1;
             display: inline-block;
-            padding: 0.2rem 1.4rem;
+            padding: 0.2rem 1.2rem;
             border-radius: 40px;
             font-weight: 500;
             color: #623f50;
@@ -193,193 +205,209 @@
         }
 
         .exp-item {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 30px;
-            padding: 1.3rem 1.3rem;
-            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 26px;
+            padding: 1.1rem 1rem;
+            margin-bottom: 1.2rem;
             border: 1px solid white;
-            transition: 0.3s;
-            box-shadow: 0 6px 12px #ffe1ec;
-        }
-
-        .exp-item:hover {
-            background: #ffffff;
-            box-shadow: 0 12px 22px #fcc6db;
+            transition: background 0.2s;
+            box-shadow: 0 4px 10px #ffe1ec;
         }
 
         .exp-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 0.7rem;
+            gap: 10px;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .exp-header i {
-            font-size: 1.7rem;
+            font-size: 1.3rem;
             color: #e68ab0;
             background: white;
             border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 6px 10px #f5b9d1;
+            padding: 8px;
+            box-shadow: 0 4px 8px #f5b9d1;
         }
 
         .exp-header h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 650;
             color: #9b6080;
+            flex: 1;
         }
 
         .exp-detail {
-            padding-left: 0.8rem;
-            border-left: 4px solid #fbb0cc;
-            margin-top: 0.5rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid #fbb0cc;
+            margin-top: 0.4rem;
         }
 
         .exp-detail p {
             margin: 0.2rem 0;
             display: flex;
-            align-items: baseline;
-            gap: 8px;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 0.9rem;
         }
 
         .exp-detail i {
             color: #de7ca2;
-            width: 20px;
-            font-size: 1rem;
+            width: 18px;
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
         }
 
         .freelance-badge {
             background: #fee1f0;
             border-radius: 60px;
-            padding: 0.2rem 1.2rem;
-            font-size: 0.75rem;
+            padding: 0.1rem 1rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
             display: inline-block;
             border: 1px solid white;
             color: #a14771;
-            margin-left: 0.5rem;
+            margin-left: 0.3rem;
         }
 
         .achievement-badge {
             background: #fad7e6;
             border-radius: 40px;
-            padding: 0.25rem 1rem;
-            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
             display: inline-block;
-            margin: 0.2rem 0.1rem;
+            margin: 0.1rem 0.1rem;
             border: 1px solid white;
-        }
-
-        .achievement-badge i {
-            margin-right: 4px;
-            color: #b35f86;
         }
 
         .hobby-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 0.5rem;
+            gap: 8px;
+            margin-top: 0.4rem;
         }
 
         .hobby-item {
             background: white;
             border-radius: 35px;
-            padding: 0.4rem 1.5rem 0.4rem 1rem;
+            padding: 0.3rem 1.2rem 0.3rem 0.8rem;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
             border: 1px solid #fec3dc;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .hobby-item i {
             color: #f58bb5;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         /* contact form */
         .contact-form {
             background: #fff2f9;
-            border-radius: 32px;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            border-radius: 28px;
+            padding: 1.3rem 1.2rem;
+            margin-top: 1.5rem;
             border: 2px solid white;
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 12px 18px;
+            padding: 10px 16px;
             border: none;
-            border-radius: 60px;
+            border-radius: 50px;
             background: white;
             font-family: 'Quicksand', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             border: 1px solid #ffe2f0;
-            transition: 0.2s;
         }
 
         .form-group textarea {
-            border-radius: 30px;
+            border-radius: 24px;
             resize: vertical;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: 3px solid #fdc1da;
-            border-color: #f389b5;
         }
 
         .submit-btn {
             background: #f59dc0;
             border: none;
-            padding: 12px 30px;
+            padding: 10px 24px;
             border-radius: 60px;
             font-weight: 700;
             font-size: 1rem;
             color: white;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
-            transition: all 0.2s;
             border: 2px solid white;
-            box-shadow: 0 5px 10px #fac0d8;
-        }
-
-        .submit-btn i {
-            font-size: 1rem;
-        }
-
-        .submit-btn:hover {
-            background: #f27db0;
-            transform: scale(1.02);
+            box-shadow: 0 4px 8px #fac0d8;
+            width: 100%;
+            justify-content: center;
         }
 
         footer {
             text-align: center;
-            margin-top: 1.8rem;
-            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
             color: #b68b9d;
         }
 
-        hr {
-            border: 1px solid #ffe2ed;
-            margin: 1rem 0;
-        }
-
-        @media (max-width: 750px) {
+        /* desktop styles */
+        @media (min-width: 750px) {
+            body {
+                padding: 2rem 1.5rem;
+            }
+            .resume-card {
+                padding: 2.2rem 2rem;
+            }
             .grid-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+                display: grid;
+                grid-template-columns: 1fr 2.2fr;
+                gap: 2rem;
+                flex-direction: row;
+            }
+            .left-panel, .right-panel {
+                padding: 1.8rem 1.5rem;
             }
             .name-title h1 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
+            }
+            .submit-btn {
+                width: auto;
+            }
+            .profile-photo img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        /* very small phones */
+        @media (max-width: 380px) {
+            .name-title h1 {
+                font-size: 1.9rem;
+            }
+            .exp-header h3 {
+                font-size: 1rem;
+            }
+            .skill-tag {
+                white-space: normal;
+                word-break: break-word;
+            }
+        }
+
+        /* optimize backdrop-filter for devices that support it */
+        @supports not (backdrop-filter: blur(8px)) {
+            .left-panel, .right-panel, .resume-card {
+                background: #fff5fa;
+                backdrop-filter: none;
             }
         }
     </style>
@@ -390,8 +418,8 @@
             <!-- LEFT COLUMN - personal -->
             <div class="left-panel">
                 <div class="profile-photo">
-                    <img src="profile.jpg" alt="Anne profile" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%3E%3Ccircle%20cx%3D%2275%22%20cy%3D%2275%22%20r%3D%2270%22%20fill%3D%22%23ffe2ec%22%2F%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Cpath%20d%3D%22M50%2095%20Q75%20115%20100%2095%22%20stroke%3D%22%23955f7a%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E');">
-                    
+                    <img src="profile.jpg" alt="Anne profile" width="150" height="150" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%3E%3Ccircle%20cx%3D%2275%22%20cy%3D%2275%22%20r%3D%2270%22%20fill%3D%22%23ffe2ec%22%2F%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2260%22%20r%3D%2212%22%20fill%3D%22%23955f7a%22%2F%3E%3Cpath%20d%3D%22M50%2095%20Q75%20115%20100%2095%22%20stroke%3D%22%23955f7a%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E');">
+                    <div class="photo-placeholder-text"><i class="fas fa-image"></i> profile.jpg</div>
                 </div>
 
                 <div class="contact-info">
@@ -410,59 +438,56 @@
                 <div>
                     <span class="skill-tag"><i class="fas fa-envelope"></i> Freelance email support</span>
                     <span class="skill-tag"><i class="fas fa-tag"></i> Product listing</span>
-                    <span class="skill-tag"><i class="fas fa-box"></i> Inventory management</span>
+                    <span class="skill-tag"><i class="fas fa-box"></i> Inventory</span>
                     <span class="skill-tag"><i class="fas fa-chart-line"></i> Data entry</span>
-                    <span class="skill-tag"><i class="fas fa-pen"></i> Copywriting / SEO</span>
-                    <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva design</span>
+                    <span class="skill-tag"><i class="fas fa-pen"></i> Copywriting/SEO</span>
+                    <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva</span>
                     <span class="skill-tag"><i class="fas fa-clock"></i> Time management</span>
                 </div>
 
-                <div class="section-title"><i class="fas fa-smile"></i> Talents & Hobbies</div>
+                <div class="section-title"><i class="fas fa-smile"></i> Hobbies</div>
                 <div class="hobby-grid">
                     <span class="hobby-item"><i class="fas fa-headphones"></i> Music</span>
-                    <span class="hobby-item"><i class="fas fa-book-open"></i> Fantasy stories</span>
+                    <span class="hobby-item"><i class="fas fa-book-open"></i> Fantasy</span>
                     <span class="hobby-item"><i class="fas fa-chess-queen"></i> Chess</span>
-                    <span class="hobby-item"><i class="fas fa-feather-alt"></i> Creative writing</span>
+                    <span class="hobby-item"><i class="fas fa-feather-alt"></i> Writing</span>
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN - freelance, education, form -->
+            <!-- RIGHT COLUMN -->
             <div class="right-panel">
                 <div class="name-title">
                     <h1>Anne E. De Guzman</h1>
-                    <span class="tagline"><i class="fas fa-laptop"></i> Freelance virtual assistant · ABM</span>
+                    <span class="tagline"><i class="fas fa-laptop"></i> Freelance VA · ABM</span>
                 </div>
 
                 <!-- EDUCATION -->
                 <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
-                <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fas fa-university" style="color:#b26b8c;"></i> <strong>Don Stevens Institute of Cavite, Inc.</strong> (ABM)</div>
-                    <div style="margin-left: 28px;">Aug 2022 – Apr 2024 · with honors</div>
+                <div class="exp-item" style="padding: 0.8rem 1rem;">
+                    <div><i class="fas fa-university"></i> <strong>Don Stevens Institute</strong> (ABM) · Aug 2022 – Apr 2024</div>
                 </div>
-                <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fas fa-school"></i> <strong>Saint Francis Institute</strong> (Junior High)</div>
-                    <div style="margin-left: 28px;">June 2018 – Mar 2020</div>
+                <div class="exp-item" style="padding: 0.8rem 1rem;">
+                    <div><i class="fas fa-school"></i> <strong>Saint Francis Institute</strong> (Junior High) · June 2018 – Mar 2020</div>
                 </div>
-                <div class="exp-item" style="padding: 1rem 1.3rem;">
-                    <div><i class="fas fa-leaf"></i> <strong>Saint Francis Institute</strong> (Elementary)</div>
-                    <div style="margin-left: 28px;">June 2013 – Mar 2017</div>
+                <div class="exp-item" style="padding: 0.8rem 1rem;">
+                    <div><i class="fas fa-leaf"></i> <strong>Saint Francis Institute</strong> (Elementary) · June 2013 – Mar 2017</div>
                 </div>
 
-                <!-- FREELANCE EXPERIENCES -->
+                <!-- FREELANCE EXPERIENCE -->
                 <div class="section-title"><i class="fas fa-briefcase"></i> Freelance experience</div>
                 
                 <div class="exp-item">
                     <div class="exp-header">
                         <i class="fas fa-comment-dots"></i>
-                        <h3>Freelance email customer support <span class="freelance-badge"><i class="fas fa-hand-peace"></i> self-employed</span></h3>
+                        <h3>Freelance email support <span class="freelance-badge"><i class="fas fa-hand-peace"></i> self-employed</span></h3>
                     </div>
                     <div class="exp-detail">
-                        <p><i class="fas fa-check-circle"></i> Provided remote email support for 3 small US‑based online shops (response time < 4h).</p>
-                        <p><i class="fas fa-check-circle"></i> Handled order inquiries, returns, and product questions; maintained 5‑star feedback.</p>
-                        <p><i class="fas fa-check-circle"></i> Managed shared inboxes using Gmail & Zoho, created template responses for efficiency.</p>
+                        <p><i class="fas fa-check-circle"></i> Remote support for 3 US online shops, 4h response.</p>
+                        <p><i class="fas fa-check-circle"></i> Order inquiries, returns, 5-star feedback.</p>
+                        <p><i class="fas fa-check-circle"></i> Managed Gmail/Zoho, created templates.</p>
                     </div>
-                    <span class="achievement-badge"><i class="fas fa-clock"></i> 1.5 years freelance</span>
-                    <span class="achievement-badge"><i class="fas fa-comment"></i> 1.2k+ emails processed</span>
+                    <span class="achievement-badge"><i class="fas fa-clock"></i> 1.5 yrs</span>
+                    <span class="achievement-badge"><i class="fas fa-comment"></i> 1.2k+ emails</span>
                 </div>
 
                 <div class="exp-item">
@@ -471,42 +496,40 @@
                         <h3>Freelance product lister / e‑commerce VA</h3>
                     </div>
                     <div class="exp-detail">
-                        <p><i class="fas fa-check-circle"></i> Listed and optimized 500+ products on Shopify, eBay, and Carousell for various clients.</p>
-                        <p><i class="fas fa-check-circle"></i> Wrote SEO-friendly titles & descriptions, resized images, and managed inventory counts.</p>
-                        <p><i class="fas fa-check-circle"></i> Coordinated with a UK‑based fashion brand to update their entire winter collection.</p>
+                        <p><i class="fas fa-check-circle"></i> Listed 500+ products on Shopify, eBay, Carousell.</p>
+                        <p><i class="fas fa-check-circle"></i> SEO titles/descriptions, image resize, inventory.</p>
+                        <p><i class="fas fa-check-circle"></i> UK fashion brand winter collection update.</p>
                     </div>
-                    <span class="achievement-badge"><i class="fas fa-pen"></i> SEO keywords</span>
-                    <span class="achievement-badge"><i class="fas fa-chart-simple"></i> 20% faster uploads</span>
+                    <span class="achievement-badge"><i class="fas fa-pen"></i> SEO</span>
+                    <span class="achievement-badge"><i class="fas fa-chart-simple"></i> 20% faster</span>
                 </div>
 
-                <!-- Additional freelance badges -->
-                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 5px 0 10px;">
-                    <span class="achievement-badge"><i class="fas fa-star"></i> flexible freelancer</span>
+                <!-- badges -->
+                <div style="display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0;">
+                    <span class="achievement-badge"><i class="fas fa-star"></i> flexible</span>
                     <span class="achievement-badge"><i class="fas fa-lightbulb"></i> resourceful</span>
                     <span class="achievement-badge"><i class="fas fa-magic"></i> creative</span>
-                    <span class="achievement-badge"><i class="fas fa-handshake"></i> client satisfaction</span>
+                    <span class="achievement-badge"><i class="fas fa-handshake"></i> client sat</span>
                 </div>
 
                 <!-- COMPETENCE -->
                 <div class="section-title"><i class="fas fa-puzzle-piece"></i> Core competences</div>
-                <div style="margin-bottom: 1rem;">
+                <div style="margin-bottom: 0.5rem;">
                     <span class="skill-tag"><i class="fas fa-calendar-check"></i> Flexible hours</span>
-                    <span class="skill-tag"><i class="fas fa-search"></i> Resourceful research</span>
-                    <span class="skill-tag"><i class="fas fa-pencil-alt"></i> Creative writing</span>
-                    <span class="skill-tag"><i class="fas fa-file-alt"></i> MS Office / G Suite</span>
-                    <span class="skill-tag"><i class="fas fa-image"></i> Canva / basic editing</span>
-                    <span class="skill-tag"><i class="fas fa-hourglass-half"></i> Time management</span>
+                    <span class="skill-tag"><i class="fas fa-search"></i> Research</span>
+                    <span class="skill-tag"><i class="fas fa-pencil-alt"></i> Writing</span>
+                    <span class="skill-tag"><i class="fas fa-file-alt"></i> MS Office/G Suite</span>
+                    <span class="skill-tag"><i class="fas fa-image"></i> Canva</span>
                 </div>
 
-                <!-- CONTACT FORM (formsubmit) with reliable icons -->
+                <!-- CONTACT FORM -->
                 <div class="contact-form">
-                    <div style="font-weight: 600; font-size: 1.3rem; color: #a0567a; margin-bottom: 0.8rem;">
+                    <div style="font-weight: 600; font-size: 1.2rem; color: #a0567a; margin-bottom: 0.8rem;">
                         <i class="fas fa-paper-plane"></i> let's work together
                     </div>
                     <form action="https://formsubmit.co/annedeguzman.dsi@gmail.com" method="POST">
-                        <!-- formsubmit options -->
                         <input type="hidden" name="_next" value="https://anne-resume.pages.dev/thanks.html">
-                        <input type="hidden" name="_subject" value="New freelance message for Anne!">
+                        <input type="hidden" name="_subject" value="New message for Anne!">
                         <input type="hidden" name="_captcha" value="false">
                         
                         <div class="form-group">
@@ -516,18 +539,18 @@
                             <input type="email" name="email" placeholder="email address *" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" rows="3" placeholder="Hi Anne, I'd like to chat about... 💬" required></textarea>
+                            <textarea name="message" rows="2" placeholder="Hi Anne, I'd like to chat about..." required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn"><i class="fas fa-heart"></i> send message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="submit-btn"><i class="fas fa-heart"></i> send message</button>
                     </form>
-                    <p style="font-size:0.7rem; margin-top:0.5rem;"><i class="fas fa-shield-alt"></i> via formsubmit.co</p>
+                    <p style="font-size:0.65rem; margin-top:0.5rem;"><i class="fas fa-shield-alt"></i> formsubmit.co</p>
                 </div>
 
                 <footer>
-                    <i class="fas fa-crown"></i> anne e. de guzman · freelance ready <i class="fas fa-sparkles"></i>
+                    <i class="fas fa-crown"></i> anne e. de guzman · freelance ready
                 </footer>
             </div>
-        </div> <!-- end grid -->
-    </div> <!-- end resume-card -->
+        </div>
+    </div>
 </body>
 </html>
